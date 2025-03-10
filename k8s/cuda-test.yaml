@@ -16,6 +16,7 @@ spec:
         containers:
         - name: cuda-test
           image: nvcr.io/nvidia/tritonserver:21.08-py3
+          imagePullPolicy: IfNotPresent
           command: ["sleep", "infinity"]
           resources:
             limits:
