@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cuda-test
+  namespace: default
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+        app: cuda-test
+   template:
+      metadata:
+        labels:
+          app: cuda-test
+      spec:
+        containers:
+        - name: cuda-test
+          image: nvidia/cuda:11.4-base
+          command: ["sleep", "infinity"]
+          resources:
+            limits:
+              nvidia.com/gpu: 1
