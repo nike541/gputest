@@ -15,7 +15,7 @@ spec:
       spec:
         containers:
         - name: cuda-test
-          image: nvidia/cuda:11.4-base
+          image: 12.8.0-cudnn-runtime-ubuntu22.04
           command: ["sleep", "infinity"]
           resources:
             limits:
